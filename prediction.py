@@ -2,7 +2,10 @@ import json
 import pickle
 import pandas as pd
 
+#from sklearn.preprocessing import StandardScaler
+
 from tensorflow.keras.models import load_model                      # type: ignore
+from tensorflow.keras.preprocessing.text import Tokenizer           # type: ignore
 from tensorflow.keras.preprocessing.text import tokenizer_from_json # type: ignore
 from tensorflow.keras.preprocessing.sequence import pad_sequences   # type: ignore
 
