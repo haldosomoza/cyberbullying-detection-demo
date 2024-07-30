@@ -25,7 +25,8 @@ To conclude, cyber-bullying undermines user well-being and damages the platform'
 
 Service Use:
 
-curl --location 'http://127.0.0.1:5000/api/predict' --header 'Content-Type: application/json' --data '{ "userFrom": "haldo", "userTo": "eduardo", "message": "I hate you" }'
+curl --location --request POST 'https://cyberbullying-detection-demo-08a206575347.herokuapp.com/api/predict' \
+     --header 'Content-Type: application/json' --data '{ "userFrom": "haldo", "userTo": "eduardo", "message": "I hate you" }'
 
 Service Result:
 
