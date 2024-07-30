@@ -27,6 +27,12 @@ def error_handler_exception(error):
 
 #=== === === === === === ===
 
+@app.route('/api/isAlive', methods=['GET'])
+def api_isAlive_get():
+    return { 'isAlive': True }
+
+#=== === === === === === ===
+
 # defining REST API endpoint for prediction
 # resulting values between 0 (no bulling) to 1 (bullying)
 @app.route('/api/predict', methods=['POST'])
