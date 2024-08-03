@@ -77,6 +77,7 @@ def _preprocess(message):
 def _execute_model(X_text, X_features):
 
     # executing the model and getting the prediction
+    print(f"Prediction: starting ...")
     y_pred = TheModels.model.predict([X_text, X_features])
     print(f"Prediction: {y_pred}")
 
