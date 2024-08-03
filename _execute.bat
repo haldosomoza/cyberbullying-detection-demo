@@ -7,4 +7,5 @@ pip install pandas==2.0.3
 pip install scikit-learn==1.3.0
 pip install tensorflow==2.13.1
 
-flask run --debug -p 5000
+#flask run --debug -p 5000
+flask run -p 5000
