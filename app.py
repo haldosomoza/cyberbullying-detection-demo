@@ -2,6 +2,9 @@
 from flask import Flask, request
 from flask_cors import CORS
 
+import os
+os.environ['TF_ENABLE_ONEDNN_OPTS'] = '0'
+
 # importing the prediction module
 import prediction 
 

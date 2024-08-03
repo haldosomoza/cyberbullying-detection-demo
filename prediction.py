@@ -47,10 +47,8 @@ def _preprocess(message):
     # converting message to array
     message_array = [message]
     print(f"Message array: {message_array}")
-
+    
     # tokenizing the message
-    TheModels.tokenizer.fit_on_texts(message_array)
-    print(f"Message fitted: {message_array}")
     X_text = TheModels.tokenizer.texts_to_sequences(message_array)
     print(f"Message tokenized: {X_text}")
     X_text = pad_sequences(X_text, maxlen=200)
