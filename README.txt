@@ -4,3 +4,4 @@ _execute.bat		# for Window execution
 
 Procfile			# for Heroku deployment
 requirements.txt	# for Heroku deployment
+runtime.txt     	# for Heroku deployment
