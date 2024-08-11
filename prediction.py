@@ -2,6 +2,8 @@ import json
 import pickle
 import pandas as pd
 
+from textblob import TextBlob
+
 from tensorflow.keras.models import load_model                      # type: ignore
 from tensorflow.keras.preprocessing.text import Tokenizer           # type: ignore
 from tensorflow.keras.preprocessing.text import tokenizer_from_json # type: ignore
@@ -57,8 +59,10 @@ def _preprocess(message):
     #--- --- ---
 
     # getting the additional features
-    df_feats    = pd.DataFrame({'sentiment_polarity': [0.3], 'sentiment_subjectivity': [0.5], 'dominant_topic': [0.7]})
-    feats_array = df_feats[['sentiment_polarity', 'sentiment_subjectivity', 'dominant_topic']].values
+    polarity     = TextBlob(message).sentiment.polarity
+    subjectivity = TextBlob(message).sentiment.subjectivity
+    df_feats     = pd.DataFrame({'sentiment_polarity': [polarity], 'sentiment_subjectivity': [subjectivity], 'dominant_topic': [0]})
+    feats_array  = df_feats[['sentiment_polarity', 'sentiment_subjectivity', 'dominant_topic']].values
     print(f"Features array: {feats_array}")
 
     #--- --- ---
