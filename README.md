@@ -23,10 +23,9 @@ A key metric to address this problem is parental awareness. According to Statist
 To start our target stakeholders, include schools, government agencies overseeing school boards, and any institutions that have online chat functionalities. These organizations are crucial in fostering safe online environments for young users and can benefit significantly from implementing our machine learning system.
 To conclude, cyber-bullying undermines user well-being and damages the platform's reputation and user engagement. By utilizing data analytics and machine learning algorithms, social media platforms, schools, and other institutions can detect and manage toxic behavior in real-time, promoting healthier interactions and keeping users engaged.
 
-Service Use:
+Service Use (using curl in bash):
 
-curl --location --request POST 'https://cyberbullying-detection-demo-08a206575347.herokuapp.com/api/predict' \
-     --header 'Content-Type: application/json' --data '{ "userFrom": "haldo", "userTo": "eduardo", "message": "I hate you" }'
+curl --location --request POST 'https://54.151.104.207/api/predict' --header 'Content-Type: application/json' --data '{ "userFrom": "haldo", "userTo": "eduardo", "message": "I hate you!" }' --insecure
 
 Service Result:
 
@@ -34,3 +33,7 @@ Service Result:
     "resultAllMsgs": 0.867,
     "resultThisMsg": 0.255
 }
+
+Send message "reset" to clear message history (using curl in bash):
+
+curl --location --request POST 'https://54.151.104.207/api/predict' --header 'Content-Type: application/json' --data '{ "userFrom": "haldo", "userTo": "eduardo", "message": "reset" }' --insecure
